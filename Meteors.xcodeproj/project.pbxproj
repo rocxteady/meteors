@@ -24,6 +24,20 @@
 		7C0905C22703C7F20019311C /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0905BD2703C7F20019311C /* RestClient.swift */; };
 		7C0905C32703C7F20019311C /* RestClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0905BE2703C7F20019311C /* RestClientManager.swift */; };
 		7C0905C42703C7F20019311C /* RestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0905BF2703C7F20019311C /* RestEncoding.swift */; };
+		7CF04ACB2704BE9A0042CE1B /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF04AC32704BE990042CE1B /* API.framework */; };
+		7CF04AD22704BE9A0042CE1B /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AD12704BE9A0042CE1B /* APITests.swift */; };
+		7CF04AD32704BE9A0042CE1B /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF04AC52704BE990042CE1B /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CF04AD62704BE9A0042CE1B /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF04AC32704BE990042CE1B /* API.framework */; };
+		7CF04AD72704BE9A0042CE1B /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF04AC32704BE990042CE1B /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CF04AE52704BEAE0042CE1B /* Codable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04ADE2704BEAE0042CE1B /* Codable+Utils.swift */; };
+		7CF04AE62704BEAE0042CE1B /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04ADF2704BEAE0042CE1B /* BaseResponseModel.swift */; };
+		7CF04AE72704BEAE0042CE1B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AE02704BEAE0042CE1B /* API.swift */; };
+		7CF04AE82704BEAE0042CE1B /* Data+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AE12704BEAE0042CE1B /* Data+Decodable.swift */; };
+		7CF04AE92704BEAE0042CE1B /* BaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AE22704BEAE0042CE1B /* BaseRequestModel.swift */; };
+		7CF04AEA2704BEAE0042CE1B /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AE32704BEAE0042CE1B /* Properties.swift */; };
+		7CF04AEB2704BEAE0042CE1B /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AE42704BEAE0042CE1B /* APIResponse.swift */; };
+		7CF04AED27052C530042CE1B /* MeteorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AEC27052C530042CE1B /* MeteorAPI.swift */; };
+		7CF04AEF27052C7D0042CE1B /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF04AEE27052C7D0042CE1B /* Meteor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +69,27 @@
 			remoteGlobalIDString = 7C09059E2703C7E00019311C;
 			remoteInfo = RestClient;
 		};
+		7CF04ACC2704BE9A0042CE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C09055F2703C63D0019311C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CF04AC22704BE990042CE1B;
+			remoteInfo = API;
+		};
+		7CF04ACE2704BE9A0042CE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C09055F2703C63D0019311C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C0905662703C63D0019311C;
+			remoteInfo = Meteors;
+		};
+		7CF04AD42704BE9A0042CE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C09055F2703C63D0019311C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CF04AC22704BE990042CE1B;
+			remoteInfo = API;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +100,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7C0905B32703C7E00019311C /* RestClient.framework in Embed Frameworks */,
+				7CF04AD72704BE9A0042CE1B /* API.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +127,19 @@
 		7C0905BD2703C7F20019311C /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		7C0905BE2703C7F20019311C /* RestClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClientManager.swift; sourceTree = "<group>"; };
 		7C0905BF2703C7F20019311C /* RestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestEncoding.swift; sourceTree = "<group>"; };
+		7CF04AC32704BE990042CE1B /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF04AC52704BE990042CE1B /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		7CF04ACA2704BE9A0042CE1B /* APITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF04AD12704BE9A0042CE1B /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		7CF04ADE2704BEAE0042CE1B /* Codable+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Utils.swift"; sourceTree = "<group>"; };
+		7CF04ADF2704BEAE0042CE1B /* BaseResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		7CF04AE02704BEAE0042CE1B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7CF04AE12704BEAE0042CE1B /* Data+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Decodable.swift"; sourceTree = "<group>"; };
+		7CF04AE22704BEAE0042CE1B /* BaseRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestModel.swift; sourceTree = "<group>"; };
+		7CF04AE32704BEAE0042CE1B /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		7CF04AE42704BEAE0042CE1B /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		7CF04AEC27052C530042CE1B /* MeteorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorAPI.swift; sourceTree = "<group>"; };
+		7CF04AEE27052C7D0042CE1B /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0905B22703C7E00019311C /* RestClient.framework in Frameworks */,
+				7CF04AD62704BE9A0042CE1B /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +174,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF04AC02704BE990042CE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CF04AC72704BE9A0042CE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF04ACB2704BE9A0042CE1B /* API.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -134,6 +199,8 @@
 				7C0905802703C63E0019311C /* MeteorsTests */,
 				7C0905A02703C7E00019311C /* RestClient */,
 				7C0905AC2703C7E00019311C /* RestClientTests */,
+				7CF04AC42704BE990042CE1B /* API */,
+				7CF04AD02704BE9A0042CE1B /* APITests */,
 				7C0905682703C63D0019311C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,6 +212,8 @@
 				7C09057D2703C63E0019311C /* MeteorsTests.xctest */,
 				7C09059F2703C7E00019311C /* RestClient.framework */,
 				7C0905A62703C7E00019311C /* RestClientTests.xctest */,
+				7CF04AC32704BE990042CE1B /* API.framework */,
+				7CF04ACA2704BE9A0042CE1B /* APITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +228,8 @@
 				7C0905732703C63E0019311C /* Assets.xcassets */,
 				7C0905752703C63E0019311C /* LaunchScreen.storyboard */,
 				7C0905782703C63E0019311C /* Info.plist */,
+				7CF04AEC27052C530042CE1B /* MeteorAPI.swift */,
+				7CF04AEE27052C7D0042CE1B /* Meteor.swift */,
 			);
 			path = Meteors;
 			sourceTree = "<group>";
@@ -192,6 +263,29 @@
 			path = RestClientTests;
 			sourceTree = "<group>";
 		};
+		7CF04AC42704BE990042CE1B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7CF04AE02704BEAE0042CE1B /* API.swift */,
+				7CF04AE42704BEAE0042CE1B /* APIResponse.swift */,
+				7CF04AE22704BEAE0042CE1B /* BaseRequestModel.swift */,
+				7CF04ADF2704BEAE0042CE1B /* BaseResponseModel.swift */,
+				7CF04ADE2704BEAE0042CE1B /* Codable+Utils.swift */,
+				7CF04AE12704BEAE0042CE1B /* Data+Decodable.swift */,
+				7CF04AE32704BEAE0042CE1B /* Properties.swift */,
+				7CF04AC52704BE990042CE1B /* API.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7CF04AD02704BE9A0042CE1B /* APITests */ = {
+			isa = PBXGroup;
+			children = (
+				7CF04AD12704BE9A0042CE1B /* APITests.swift */,
+			);
+			path = APITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -200,6 +294,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0905AF2703C7E00019311C /* RestClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CF04ABE2704BE990042CE1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF04AD32704BE9A0042CE1B /* API.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +321,7 @@
 			);
 			dependencies = (
 				7C0905B12703C7E00019311C /* PBXTargetDependency */,
+				7CF04AD52704BE9A0042CE1B /* PBXTargetDependency */,
 			);
 			name = Meteors;
 			productName = Meteors;
@@ -280,6 +383,43 @@
 			productReference = 7C0905A62703C7E00019311C /* RestClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7CF04AC22704BE990042CE1B /* API */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CF04ADC2704BE9A0042CE1B /* Build configuration list for PBXNativeTarget "API" */;
+			buildPhases = (
+				7CF04ABE2704BE990042CE1B /* Headers */,
+				7CF04ABF2704BE990042CE1B /* Sources */,
+				7CF04AC02704BE990042CE1B /* Frameworks */,
+				7CF04AC12704BE990042CE1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = API;
+			productName = API;
+			productReference = 7CF04AC32704BE990042CE1B /* API.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7CF04AC92704BE9A0042CE1B /* APITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CF04ADD2704BE9A0042CE1B /* Build configuration list for PBXNativeTarget "APITests" */;
+			buildPhases = (
+				7CF04AC62704BE9A0042CE1B /* Sources */,
+				7CF04AC72704BE9A0042CE1B /* Frameworks */,
+				7CF04AC82704BE9A0042CE1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CF04ACD2704BE9A0042CE1B /* PBXTargetDependency */,
+				7CF04ACF2704BE9A0042CE1B /* PBXTargetDependency */,
+			);
+			name = APITests;
+			productName = APITests;
+			productReference = 7CF04ACA2704BE9A0042CE1B /* APITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -305,6 +445,14 @@
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 7C0905662703C63D0019311C;
 					};
+					7CF04AC22704BE990042CE1B = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
+					};
+					7CF04AC92704BE9A0042CE1B = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 7C0905662703C63D0019311C;
+					};
 				};
 			};
 			buildConfigurationList = 7C0905622703C63D0019311C /* Build configuration list for PBXProject "Meteors" */;
@@ -324,6 +472,8 @@
 				7C09057C2703C63E0019311C /* MeteorsTests */,
 				7C09059E2703C7E00019311C /* RestClient */,
 				7C0905A52703C7E00019311C /* RestClientTests */,
+				7CF04AC22704BE990042CE1B /* API */,
+				7CF04AC92704BE9A0042CE1B /* APITests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,6 +510,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF04AC12704BE990042CE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CF04AC82704BE9A0042CE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -367,8 +531,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF04AED27052C530042CE1B /* MeteorAPI.swift in Sources */,
 				7C09056F2703C63D0019311C /* ViewController.swift in Sources */,
 				7C09056B2703C63D0019311C /* AppDelegate.swift in Sources */,
+				7CF04AEF27052C7D0042CE1B /* Meteor.swift in Sources */,
 				7C09056D2703C63D0019311C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +567,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CF04ABF2704BE990042CE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF04AEB2704BEAE0042CE1B /* APIResponse.swift in Sources */,
+				7CF04AEA2704BEAE0042CE1B /* Properties.swift in Sources */,
+				7CF04AE52704BEAE0042CE1B /* Codable+Utils.swift in Sources */,
+				7CF04AE72704BEAE0042CE1B /* API.swift in Sources */,
+				7CF04AE62704BEAE0042CE1B /* BaseResponseModel.swift in Sources */,
+				7CF04AE82704BEAE0042CE1B /* Data+Decodable.swift in Sources */,
+				7CF04AE92704BEAE0042CE1B /* BaseRequestModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CF04AC62704BE9A0042CE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF04AD22704BE9A0042CE1B /* APITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -423,6 +611,21 @@
 			isa = PBXTargetDependency;
 			target = 7C09059E2703C7E00019311C /* RestClient */;
 			targetProxy = 7C0905B02703C7E00019311C /* PBXContainerItemProxy */;
+		};
+		7CF04ACD2704BE9A0042CE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CF04AC22704BE990042CE1B /* API */;
+			targetProxy = 7CF04ACC2704BE9A0042CE1B /* PBXContainerItemProxy */;
+		};
+		7CF04ACF2704BE9A0042CE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C0905662703C63D0019311C /* Meteors */;
+			targetProxy = 7CF04ACE2704BE9A0042CE1B /* PBXContainerItemProxy */;
+		};
+		7CF04AD52704BE9A0042CE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CF04AC22704BE990042CE1B /* API */;
+			targetProxy = 7CF04AD42704BE9A0042CE1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -783,6 +986,119 @@
 			};
 			name = Release;
 		};
+		7CF04AD82704BE9A0042CE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7CF04AD92704BE9A0042CE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7CF04ADA2704BE9A0042CE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meteors.app/Meteors";
+			};
+			name = Debug;
+		};
+		7CF04ADB2704BE9A0042CE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meteors.app/Meteors";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -827,6 +1143,24 @@
 			buildConfigurations = (
 				7C0905B92703C7E00019311C /* Debug */,
 				7C0905BA2703C7E00019311C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CF04ADC2704BE9A0042CE1B /* Build configuration list for PBXNativeTarget "API" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF04AD82704BE9A0042CE1B /* Debug */,
+				7CF04AD92704BE9A0042CE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CF04ADD2704BE9A0042CE1B /* Build configuration list for PBXNativeTarget "APITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF04ADA2704BE9A0042CE1B /* Debug */,
+				7CF04ADB2704BE9A0042CE1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
