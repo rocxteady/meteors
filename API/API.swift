@@ -37,9 +37,9 @@ public extension API {
                 switch error {
                 case .data(let data):
                     do {
-                        let responseModel: ResponseModel = try data.toDecodable()
-                        apiResponse.responseModel = responseModel
+                        let responseModel: ErrorResponseModel = try data.toDecodable()
                         apiResponse.success = false
+                        apiResponse.error = NSError(domain: Properties.domain, code: -1, userInfo: [NSLocalizedDescriptionKey: responseModel.message])
                     } catch let error {
                         apiResponse.error = error
                     }

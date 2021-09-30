@@ -7,8 +7,9 @@
 
 import Foundation
 
-open class BaseResponseModel<T: Decodable>: Decodable {
+class ErrorResponseModel: Decodable {
     
-    public let result: [T]
+    let error: Bool
+    let message: String
     
 }

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let api = MeteorAPI()
         api.start { response in
-            print(response)
+            print(response.responseModel)
         }
     }
 
