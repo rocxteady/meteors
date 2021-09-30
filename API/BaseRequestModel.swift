@@ -9,7 +9,7 @@ import Foundation
 
 open class BaseRequestModel: Encodable {
         
-    var `where` = "year>'1900'"
+    var `where` = "year>'1900' AND mass>0"
     
     public init(){}
     
