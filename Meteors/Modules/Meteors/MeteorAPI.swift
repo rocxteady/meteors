@@ -13,7 +13,7 @@ class MeteorAPI: API {
     
     public typealias ResponseModel = [Meteor]
 
-    public typealias RequestModel = MeteorsRequestModel
+    public typealias RequestModel = BaseRequestModel
         
     public var uri = "/y77d-th95.json"
     
@@ -25,8 +25,7 @@ class MeteorAPI: API {
         }
     }
     
-    public init(order: MeteorOrder = .date) {
-        let parameters = RequestModel(order: order)
+    public init(parameters: RequestModel = RequestModel()) {
         endpoint = RestEndpoint(urlString: Properties.baseURL + uri, parameters: try? parameters.toDictionary())
         self.parameters = parameters
     }
