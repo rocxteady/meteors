@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
     func toDecodable<T: Decodable>() throws -> T {
         let decoder = JSONDecoder()
         return try decoder.decode(T.self, from: self)

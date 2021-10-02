@@ -9,22 +9,24 @@ import Foundation
 
 class MeteorsViewModel {
     
-    private let repository: MeteorsRepository
+    private var repository: MeteorsRepository
     
     private var currentOrder: SegmentedControlType = .date
     
-    var meteors: [Meteor] = []
-    
+    var isEditable: Bool {
+        return repository.isEditable
+    }
+        
     var meteorsReady: () -> () = {}
     
     var errorReceived: (_ error: Error) -> () = { _ in }
     
     var numberOfMeteros: Int {
-        meteors.count
+        repository.meteors.count
     }
     
     func meteor(at index: Int) -> Meteor {
-        meteors[index]
+        repository.meteors[index]
     }
     
     init(repository: MeteorsRepository) {
@@ -44,16 +46,28 @@ extension MeteorsViewModel {
             }
             return
         }
-        repository.getMeteros { [weak self] result in
-            switch result {
-                case .success(let meteors):
-                self?.meteors = meteors
-                if let order = order {
-                    self?.orderBy(order)
-                } else {
-                    self?.meteorsReady()
-                }
-            case .failure(let error):
+        repository.getMeteros { [weak self] error in
+            if let error = error {
+                self?.errorReceived(error)
+            } else if let order = order {
+                self?.orderBy(order)
+            } else {
+                self?.meteorsReady()
+            }
+        }
+    }
+    
+    func removeMeteor(at index: Int) {
+        repository.removeFromFavorite(meteor: repository.meteors[index]) { [weak self] error in
+            if let error = error {
+                self?.errorReceived(error)
+            }
+        }
+    }
+    
+    func add(meteor: Meteor) {
+        repository.addToFavorite(meteor: meteor) { [weak self] error in
+            if let error = error {
                 self?.errorReceived(error)
             }
         }
@@ -62,11 +76,11 @@ extension MeteorsViewModel {
     private func orderBy(_ orderType: SegmentedControlType) {
         switch orderType {
         case .date:
-            meteors.sort { lhs, rhs in
+            repository.meteors.sort { lhs, rhs in
                 return lhs.timeInterval > rhs.timeInterval
             }
         case .size:
-            meteors.sort { lhs, rhs in
+            repository.meteors.sort { lhs, rhs in
                 return lhs.massDouble > rhs.massDouble
             }
         }

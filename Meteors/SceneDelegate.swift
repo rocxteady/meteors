@@ -19,7 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         let rootViewController = UITabBarController()
-        rootViewController.viewControllers = [UINavigationController(rootViewController: MeteorsViewController())]
+        let meteorsNavigtionController = UINavigationController(rootViewController: MeteorsViewController(title: "Meteors", viewModel: MeteorsViewModel(repository: MeteorsRemoteRepository())))
+        meteorsNavigtionController.tabBarItem.image = UIImage(named: "meteors")
+        meteorsNavigtionController.tabBarItem.title = "Meteors"
+        let favoritesNavigationController = UINavigationController(rootViewController: MeteorsViewController(title: "Favorites", viewModel: MeteorsViewModel(repository: MeteorsLocalRepository())))
+        favoritesNavigationController.tabBarItem.image = UIImage(named: "favorites")
+        favoritesNavigationController.tabBarItem.title = "Favorites"
+        rootViewController.viewControllers = [meteorsNavigtionController, favoritesNavigationController]
         window.rootViewController = rootViewController
         self.window = window
         window.makeKeyAndVisible()

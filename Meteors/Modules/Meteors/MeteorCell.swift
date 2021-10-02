@@ -85,7 +85,7 @@ extension MeteorCell {
     func configure(meteor: Meteor) {
         nameLabel.text = meteor.name
         dateLabel.text = meteor.date
-        massLabel.text = meteor.mass
+        massLabel.text = meteor.massFormatted
     }
     
 }

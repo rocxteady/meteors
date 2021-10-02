@@ -25,15 +25,25 @@ enum SegmentedControlType: Int {
 
 class MeteorsViewController: UIViewController {
     
-    let viewModel = MeteorsViewModel(repository: MeteorsRemoteRepository())
+    private let viewModel: MeteorsViewModel
+    private let tabTitle: String
     
     private let segmentedControl = UISegmentedControl()
     private let tableView = UITableView(frame: .zero, style: .plain)
-
+    
+    init(title: String, viewModel: MeteorsViewModel) {
+        self.tabTitle = title
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Meteors"
         setupUI()
         configureViewModel()
         getMeteors()
@@ -57,7 +67,8 @@ class MeteorsViewController: UIViewController {
     }
 
     private func setupUI() {
-        navigationController?.tabBarItem.image = UIImage(named: "meteors")
+        title = tabTitle
+
         view.backgroundColor = .systemBackground
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +78,7 @@ class MeteorsViewController: UIViewController {
         tableView.delegate = self
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(getMeteors), for: .valueChanged)
+        
         view.addSubview(tableView)
 
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -103,6 +115,21 @@ extension MeteorsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MeteorCell", for: indexPath) as? MeteorCell else { return UITableViewCell() }
         cell.configure(meteor: viewModel.meteor(at: indexPath.row))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.isEditable
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeMeteor(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
     }
     
 }

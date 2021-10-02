@@ -9,11 +9,14 @@ import Foundation
 
 public extension Encodable {
     func toDictionary() throws -> [String: AnyObject]? {
-        let data = try JSONEncoder().encode(self)
+        let data = try toData()
         return try JSONSerialization.jsonObject(with: data, options: []) as? [String : AnyObject]
     }
     func toArray() throws -> [AnyObject]? {
-        let data = try JSONEncoder().encode(self)
+        let data = try toData()
         return try JSONSerialization.jsonObject(with: data, options: []) as? [AnyObject]
+    }
+    func toData() throws -> Data {
+        return try JSONEncoder().encode(self)
     }
 }
