@@ -25,6 +25,8 @@
 		7C0905C42703C7F20019311C /* RestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0905BF2703C7F20019311C /* RestEncoding.swift */; };
 		7C5B3D122707880800F72020 /* MeteorsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B3D112707880800F72020 /* MeteorsRepository.swift */; };
 		7C5B3D14270791A000F72020 /* AppProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B3D13270791A000F72020 /* AppProperties.swift */; };
+		7CD9A5BD27093178007355C1 /* MeteorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9A5BC27093178007355C1 /* MeteorDetailViewController.swift */; };
+		7CD9A5BF270933D2007355C1 /* MeteorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9A5BE270933D2007355C1 /* MeteorDetailViewModel.swift */; };
 		7CEB1A5A27065A10009BDD08 /* MeteorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB1A5927065A10009BDD08 /* MeteorsViewModel.swift */; };
 		7CEB1A5C27067A44009BDD08 /* MeteorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEB1A5B27067A44009BDD08 /* MeteorCell.swift */; };
 		7CF04ACB2704BE9A0042CE1B /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF04AC32704BE990042CE1B /* API.framework */; };
@@ -132,6 +134,8 @@
 		7C0905BF2703C7F20019311C /* RestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestEncoding.swift; sourceTree = "<group>"; };
 		7C5B3D112707880800F72020 /* MeteorsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorsRepository.swift; sourceTree = "<group>"; };
 		7C5B3D13270791A000F72020 /* AppProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProperties.swift; sourceTree = "<group>"; };
+		7CD9A5BC27093178007355C1 /* MeteorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewController.swift; sourceTree = "<group>"; };
+		7CD9A5BE270933D2007355C1 /* MeteorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewModel.swift; sourceTree = "<group>"; };
 		7CEB1A5927065A10009BDD08 /* MeteorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorsViewModel.swift; sourceTree = "<group>"; };
 		7CEB1A5B27067A44009BDD08 /* MeteorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorCell.swift; sourceTree = "<group>"; };
 		7CF04AC32704BE990042CE1B /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,8 @@
 				7C0905782703C63E0019311C /* Info.plist */,
 				7C5B3D13270791A000F72020 /* AppProperties.swift */,
 				7CF90B3E27087420002F16AF /* MeteorsFileManager.swift */,
+				7CD9A5BC27093178007355C1 /* MeteorDetailViewController.swift */,
+				7CD9A5BE270933D2007355C1 /* MeteorDetailViewModel.swift */,
 			);
 			path = Meteors;
 			sourceTree = "<group>";
@@ -559,9 +565,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5B3D14270791A000F72020 /* AppProperties.swift in Sources */,
+				7CD9A5BF270933D2007355C1 /* MeteorDetailViewModel.swift in Sources */,
 				7CF04AED27052C530042CE1B /* MeteorAPI.swift in Sources */,
 				7C09056F2703C63D0019311C /* MeteorsViewController.swift in Sources */,
 				7C09056B2703C63D0019311C /* AppDelegate.swift in Sources */,
+				7CD9A5BD27093178007355C1 /* MeteorDetailViewController.swift in Sources */,
 				7CEB1A5A27065A10009BDD08 /* MeteorsViewModel.swift in Sources */,
 				7CF04AEF27052C7D0042CE1B /* Meteor.swift in Sources */,
 				7C5B3D122707880800F72020 /* MeteorsRepository.swift in Sources */,

@@ -16,6 +16,13 @@ class MeteorsViewModel {
     var isEditable: Bool {
         return repository.isEditable
     }
+    
+    var favoritesRepository: MeteorsLocalRepository {
+        if let favoritesRepository = repository as? MeteorsLocalRepository {
+            return favoritesRepository
+        }
+        return MeteorsLocalRepository()
+    }
         
     var meteorsReady: () -> () = {}
     

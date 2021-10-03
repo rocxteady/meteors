@@ -41,12 +41,20 @@ class MeteorsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        getMeteors()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
         configureViewModel()
-        getMeteors()
+        
     }
     
     private func configureViewModel() {
@@ -59,6 +67,10 @@ class MeteorsViewController: UIViewController {
             self?.tableView.refreshControl?.endRefreshing()
             self?.tableView.reloadData()
         }
+    }
+    
+    @objc private func refresh() {
+        getMeteors(shouldRefresh: true)
     }
     
     @objc private func getMeteors(shouldRefresh: Bool = true) {
@@ -77,7 +89,7 @@ class MeteorsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action: #selector(getMeteors), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         view.addSubview(tableView)
 
@@ -130,6 +142,11 @@ extension MeteorsViewController: UITableViewDataSource, UITableViewDelegate {
             viewModel.removeMeteor(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let meteorDetailViewController = MeteorDetailViewController(viewModel: MeteorDetailViewModel(repository: viewModel.favoritesRepository, meteor: viewModel.meteor(at: indexPath.row)))
+        navigationController?.pushViewController(meteorDetailViewController, animated: true)
     }
     
 }
