@@ -53,10 +53,12 @@ class MeteorsLocalRepository: MeteorsRepository {
     
     let isEditable: Bool = true
     
+    private let fileName = "meteors.json"
+    
     func getMeteros(completion: @escaping MeteorsCompletion) {
         DispatchQueue.global().async { [weak self] in
             do {
-                let data = try MeteorsFileManager.sharedManager.getFileData(fileName: "meteors.json")
+                let data = try MeteorsFileManager.sharedManager.getFileData(fileName: self?.fileName ?? "")
                 let meteors: [Meteor] = try data.toDecodable()
                 DispatchQueue.main.async {
                     self?.meteors = meteors
@@ -91,7 +93,7 @@ class MeteorsLocalRepository: MeteorsRepository {
     private func save(completion: @escaping MeteorsCompletion) {
         do {
             let data = try meteors.toData()
-            try MeteorsFileManager.sharedManager.save(data: data, fileName: "meteors.json")
+            try MeteorsFileManager.sharedManager.save(data: data, fileName: fileName)
             completion(nil)
         } catch {
             completion(error)

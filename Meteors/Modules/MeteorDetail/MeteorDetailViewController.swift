@@ -36,8 +36,9 @@ class MeteorDetailViewController: UIViewController {
     }
     
     private func configureViewModel() {
-        viewModel.errorReceived = { error in
+        viewModel.errorReceived = { [weak self] error in
             print(error.localizedDescription)
+            self?.loadData()
         }
         viewModel.updatedFavoriteStatus = { [weak self] in
             self?.loadData()
@@ -58,10 +59,22 @@ class MeteorDetailViewController: UIViewController {
     }
     
     private func setupUI() {
+        navigationItem.title = viewModel.meteor.name
+        
+        mapView.delegate = self
         mapView.frame = view.bounds
         view.backgroundColor = .systemBackground
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(mapView)
+        
+        let meteorAnnotation = MKPointAnnotation()
+        meteorAnnotation.title = viewModel.meteor.name
+        meteorAnnotation.subtitle = [viewModel.meteor.date, viewModel.meteor.massFormatted].joined(separator: " · ")
+        meteorAnnotation.coordinate = CLLocationCoordinate2D(latitude: viewModel.meteor.geoLocation.latitude, longitude: viewModel.meteor.geoLocation.longitude)
+        mapView.addAnnotation(meteorAnnotation)
+        
+        let region = MKCoordinateRegion(center: meteorAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        mapView.setRegion(region, animated: true)
     }
 
     @objc private func favoriteButtonTapped() {
@@ -71,4 +84,24 @@ class MeteorDetailViewController: UIViewController {
             viewModel.addToFavorites()
         }
     }
+}
+
+extension MeteorDetailViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = "MeteorAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+
+        return annotationView
+    }
+    
 }

@@ -11,7 +11,7 @@ class MeteorDetailViewModel {
     
     private let repository: MeteorsRepository
 
-    private let meteor: Meteor
+    let meteor: Meteor
     
     var isFavorited: Bool {
         return repository.meteors.contains(meteor)

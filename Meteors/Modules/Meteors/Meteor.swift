@@ -13,23 +13,27 @@ struct Meteor: Codable {
     
     let name: String
     
+    let geoLocation: GeoLocation
+    
+    private let year: String
+
+    private let mass: String
+    
     let date: String
     
     let timeInterval: TimeInterval
-    
-    private let mass: String
     
     let massFormatted: String
     
     let massDouble: Double
     
-    private let year: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case year
         case mass
+        case geoLocation = "geolocation"
     }
 
     init(from decoder: Decoder) throws {
@@ -38,6 +42,7 @@ struct Meteor: Codable {
         name = try values.decode(String.self, forKey: .name)
         year = try values.decode(String.self, forKey: .year)
         mass = try values.decode(String.self, forKey: .mass)
+        geoLocation = try values.decode(GeoLocation.self, forKey: .geoLocation)
         massDouble = Double(mass) ?? 0
         massFormatted = mass  + " kg"
         var dateFormatter = AppProperties.dateFormatter
@@ -53,11 +58,40 @@ struct Meteor: Codable {
         try container.encode(name, forKey: .name)
         try container.encode(year, forKey: .year)
         try container.encode(mass, forKey: .mass)
+        try container.encode(geoLocation, forKey: .geoLocation)
     }
 }
 
 extension Meteor: Equatable {
     static func == (lhs: Meteor, rhs: Meteor) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+struct GeoLocation: Codable {
+    
+    let latitude: Double
+    
+    let longitude: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case coordinates
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let coordinates = try values.decode([Double].self, forKey: .coordinates)
+        guard coordinates.count == 2 else {
+            longitude = 0
+            latitude = 0
+            return
+        }
+        longitude = coordinates[0]
+        latitude = coordinates[1]
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode([longitude, latitude], forKey: .coordinates)
     }
 }
